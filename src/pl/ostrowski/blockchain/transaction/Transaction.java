@@ -63,7 +63,7 @@ public class Transaction {
             return false;
         }
 
-        float leftOver = getInputValue();
+        float leftOver = getInputValue() - value;
         transactionId = calculateHash();
         outputs.add(new TransactionOutput(this.reciepent, value, transactionId));
         outputs.add(new TransactionOutput(this.sender, leftOver, transactionId));
